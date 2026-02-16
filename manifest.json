@@ -29,7 +29,7 @@
   "commands": {
     "trigger-skeleton": {
       "suggested_key": {
-        "default": "Ctrl+Shift+S"
+        "default": "Ctrl+Shift+K"
       },
       "description": "Trigger skeleton manually (Debug)"
     }
