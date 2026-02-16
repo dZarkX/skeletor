@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            width: 250px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 15px;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            margin: 0;
+            border: 2px solid #555;
+        }
+        h2 {
+            margin-top: 0;
+            color: #ff9800;
+            font-size: 1.2rem;
+            text-align: center;
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+        }
+        .stat-item {
+            margin: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+        }
+        .value {
+            font-weight: bold;
+            color: #4caf50;
+        }
+        .footer {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px dashed #444;
+            text-align: center;
+        }
+        .donate-links {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        .donate-btn {
+            display: block;
+            padding: 8px;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            transition: background 0.2s;
+        }
+        .donate-btn:hover {
+            background-color: #444;
+        }
+        .bone {
+            text-align: center;
+            font-size: 2rem;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h2>Skeletor Stats</h2>
+    <div class="bone">💀</div>
+    <div class="stat-item">
+        <span>Last spawn:</span>
+        <span id="lastSpawn" class="value">Loading...</span>
+    </div>
+    <div class="stat-item">
+        <span>Current Pity:</span>
+        <span id="pity" class="value">0%</span>
+    </div>
+    <div class="stat-item">
+        <span>Session Spawns:</span>
+        <span id="sessionCount" class="value">0</span>
+    </div>
+
+    <div class="footer">
+        <div style="font-size: 0.7rem; color: #888;">Keep the bones rattling</div>
+        <div class="donate-links">
+            <a href="https://buymeacoffee.com/3mon" target="_blank" class="donate-btn">☕ Buy me a coffee</a>
+            <a href="https://ko-fi.com/3mon_" target="_blank" class="donate-btn">🎁 Ko-fi</a>
+        </div>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>
