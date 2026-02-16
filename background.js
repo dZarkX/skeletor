@@ -10,16 +10,37 @@ chrome.runtime.onInstalled.addListener(() => {
     console.log('Skeleton extension installed. Alarm created.');
 });
 
+// Reset session count on browser startup
+chrome.runtime.onStartup.addListener(() => {
+    chrome.storage.local.set({ sessionCount: 0 });
+});
+
 // Initialize storage if empty
 function initializeState() {
-    chrome.storage.local.get(['lastSpawn', 'failCount', 'sessionCount'], (result) => {
+    chrome.storage.local.get(['lastSpawn', 'failCount', 'sessionCount', 'totalSpawns'], (result) => {
+        let updates = {};
+
+        // Migration: If totalSpawns is missing but we have sessionCount, 
+        // treat old sessionCount as the historical record.
+        if (result.totalSpawns === undefined) {
+            updates.totalSpawns = result.sessionCount || 0;
+            // Reset session count for this new "session" (since update/install)
+            updates.sessionCount = 0;
+        }
+
         if (!result.lastSpawn) {
-            chrome.storage.local.set({
-                lastSpawn: Date.now(),
-                failCount: 0,
-                sessionCount: 0
-            }, () => updateBadge(Date.now(), BASE_CHANCE));
+            updates.lastSpawn = Date.now();
+            updates.failCount = 0;
+            if (updates.sessionCount === undefined) updates.sessionCount = 0;
+            if (updates.totalSpawns === undefined) updates.totalSpawns = 0;
+
+            chrome.storage.local.set(updates, () => updateBadge(Date.now(), BASE_CHANCE));
         } else {
+            // Apply any migration updates
+            if (Object.keys(updates).length > 0) {
+                chrome.storage.local.set(updates);
+            }
+
             // Calculate chance based on existing failCount
             const currentChance = BASE_CHANCE + ((result.failCount || 0) * PITY_INCREMENT);
             updateBadge(result.lastSpawn, currentChance);
@@ -57,14 +78,18 @@ function checkAndTrigger() {
 }
 
 // Reset state after spawn
+// Reset state after spawn
 function resetState() {
-    chrome.storage.local.get(['sessionCount'], (result) => {
-        const newCount = (result.sessionCount || 0) + 1;
+    chrome.storage.local.get(['sessionCount', 'totalSpawns'], (result) => {
+        const newSessionCount = (result.sessionCount || 0) + 1;
+        const newTotalSpawns = (result.totalSpawns || 0) + 1;
         const now = Date.now();
+
         chrome.storage.local.set({
             lastSpawn: now,
             failCount: 0,
-            sessionCount: newCount
+            sessionCount: newSessionCount,
+            totalSpawns: newTotalSpawns
         });
         updateBadge(now, BASE_CHANCE);
     });

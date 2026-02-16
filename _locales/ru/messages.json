@@ -17,6 +17,21 @@
     "sessionSpawns": {
         "message": "Появлений за сессию:"
     },
+    "totalSpawns": {
+        "message": "Рекорд Скелетора:"
+    },
+    "lastSpawnTooltip": {
+        "message": "Время с момента последнего появления скелета."
+    },
+    "currentPityTooltip": {
+        "message": "Текущий шанс появления скелета каждую минуту. Увеличивается со временем."
+    },
+    "sessionSpawnsTooltip": {
+        "message": "Количество появлений скелета в этой сессии браузера."
+    },
+    "totalSpawnsTooltip": {
+        "message": "Общее количество появлений скелета с момента установки."
+    },
     "minAgo": {
         "message": "мин. назад"
     },

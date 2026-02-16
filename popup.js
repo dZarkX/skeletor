@@ -3,6 +3,7 @@ function updateStats() {
         const lastSpawn = result.lastSpawn || Date.now();
         const failCount = result.failCount || 0;
         const sessionCount = result.sessionCount || 0;
+        const totalSpawns = result.totalSpawns || 0;
 
         // Last spawn time
         const diffMs = Date.now() - lastSpawn;
@@ -16,6 +17,9 @@ function updateStats() {
 
         // Session count
         document.getElementById('sessionCount').textContent = sessionCount;
+
+        // Total Spawns (Record)
+        document.getElementById('totalSpawns').textContent = totalSpawns;
     });
 }
 
@@ -24,6 +28,13 @@ function initI18n() {
         const message = chrome.i18n.getMessage(element.getAttribute('data-i18n'));
         if (message) {
             element.textContent = message;
+        }
+    });
+
+    document.querySelectorAll('[data-i18n-title]').forEach(element => {
+        const message = chrome.i18n.getMessage(element.getAttribute('data-i18n-title'));
+        if (message) {
+            element.title = message;
         }
     });
 }

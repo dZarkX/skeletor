@@ -23,6 +23,26 @@
         "message": "Session Spawns:",
         "description": "Label for session spawn count"
     },
+    "Record": {
+        "message": "Skeletor Record:",
+        "description": "Label for total spawn count (record)"
+    },
+    "lastSpawnTooltip": {
+        "message": "Time since the last time the skeleton appeared.",
+        "description": "Tooltip for last spawn"
+    },
+    "currentPityTooltip": {
+        "message": "The current chance for the skeleton to appear every minute. Increases over time.",
+        "description": "Tooltip for current pity"
+    },
+    "sessionSpawnsTooltip": {
+        "message": "Number of times the skeleton appeared in this browser session.",
+        "description": "Tooltip for session spawns"
+    },
+    "totalSpawnsTooltip": {
+        "message": "Total number of times the skeleton appeared since installation.",
+        "description": "Tooltip for total spawns"
+    },
     "minAgo": {
         "message": "min ago",
         "description": "Minutes ago text"

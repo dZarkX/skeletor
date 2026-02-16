@@ -17,6 +17,21 @@
     "sessionSpawns": {
         "message": "Spawny w sesji:"
     },
+    "totalSpawns": {
+        "message": "Rekord Szkieletora:"
+    },
+    "lastSpawnTooltip": {
+        "message": "Czas od ostatniego pojawienia się szkieleta."
+    },
+    "currentPityTooltip": {
+        "message": "Obecna szansa na pojawienie się szkieleta w każdej minucie. Wzrasta z czasem."
+    },
+    "sessionSpawnsTooltip": {
+        "message": "Liczba pojawień się szkieleta w tej sesji przeglądarki."
+    },
+    "totalSpawnsTooltip": {
+        "message": "Całkowita liczba pojawień się szkieleta od momentu instalacji."
+    },
     "minAgo": {
         "message": "min temu"
     },

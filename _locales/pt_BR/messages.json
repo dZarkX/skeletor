@@ -17,6 +17,21 @@
     "sessionSpawns": {
         "message": "Spawns na sessão:"
     },
+    "totalSpawns": {
+        "message": "Recorde do Skeletor:"
+    },
+    "lastSpawnTooltip": {
+        "message": "Tempo desde a última vez que o esqueleto apareceu."
+    },
+    "currentPityTooltip": {
+        "message": "A chance atual do esqueleto aparecer a cada minuto. Aumenta com o tempo."
+    },
+    "sessionSpawnsTooltip": {
+        "message": "Número de vezes que o esqueleto apareceu nesta sessão do navegador."
+    },
+    "totalSpawnsTooltip": {
+        "message": "Número total de vezes que o esqueleto apareceu desde a instalação."
+    },
     "minAgo": {
         "message": "min atrás"
     },
