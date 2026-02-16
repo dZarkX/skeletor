@@ -7,7 +7,7 @@ A "glupie" (silly) extension that makes a skeleton run across your screen occasi
 - **Pity system**: The longer you wait, the higher the chance!
 - **Random sounds**: 7 different bone-rattling audio effects.
 - **Silly popup**: Track how many times you've been "skeleted" this session.
-- **Debug mode**: Use `Ctrl + Shift + F10` to trigger the skeleton manually.
+- **Debug mode**: Use `Ctrl + Shift + S` to trigger the skeleton manually.
 
 ## 💰 Support the rattling
 If this made you chuckle, consider supporting the bone fund:
