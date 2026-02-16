@@ -1,0 +1,35 @@
+{
+    "extName": {
+        "message": "Carrera de Esqueleto"
+    },
+    "extDesc": {
+        "message": "Un esqueleto tonto que corre por tu pantalla de vez en cuando."
+    },
+    "popupTitle": {
+        "message": "Estadísticas del Esqueleto"
+    },
+    "lastSpawn": {
+        "message": "Última aparición:"
+    },
+    "currentPity": {
+        "message": "Probabilidad de aparición:"
+    },
+    "sessionSpawns": {
+        "message": "Apariciones en sesión:"
+    },
+    "minAgo": {
+        "message": "min atrás"
+    },
+    "keepRattling": {
+        "message": "Que suenen los huesos"
+    },
+    "coffeeBtn": {
+        "message": "Café"
+    },
+    "kofiBtn": {
+        "message": "Ko-fi"
+    },
+    "githubBtn": {
+        "message": "GitHub / Feedback"
+    }
+}

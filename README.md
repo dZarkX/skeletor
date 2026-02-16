@@ -1,9 +1,9 @@
 # 💀 SKELETOR CHROME EXTENSION 🦴
 
-A "glupie" (silly) extension that makes a skeleton run across your screen occasionally because why not?
+A (silly) extension that makes a skeleton run across your screen occasionally because why not?
 
 ## 🚀 Features
-- **1% chance** per minute to get spooked.
+- **0.5% chance** per minute to get spooked.
 - **Pity system**: The longer you wait, the higher the chance!
 - **Random sounds**: 7 different bone-rattling audio effects.
 - **Silly popup**: Track how many times you've been "skeleted" this session.

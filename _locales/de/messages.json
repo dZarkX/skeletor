@@ -1,0 +1,35 @@
+{
+    "extName": {
+        "message": "Skelett-Lauf"
+    },
+    "extDesc": {
+        "message": "Ein albernes Skelett, das gelegentlich über den Bildschirm läuft."
+    },
+    "popupTitle": {
+        "message": "Skelett-Statistiken"
+    },
+    "lastSpawn": {
+        "message": "Letzter Spawn:"
+    },
+    "currentPity": {
+        "message": "Aktuelles Pity:"
+    },
+    "sessionSpawns": {
+        "message": "Sitzungs-Spawns:"
+    },
+    "minAgo": {
+        "message": "Min. her"
+    },
+    "keepRattling": {
+        "message": "Lass die Knochen klappern"
+    },
+    "coffeeBtn": {
+        "message": "Kaffee"
+    },
+    "kofiBtn": {
+        "message": "Ko-fi"
+    },
+    "githubBtn": {
+        "message": "GitHub / Feedback"
+    }
+}

@@ -1,0 +1,46 @@
+{
+    "extName": {
+        "message": "Skeleton Run",
+        "description": "The name of the extension"
+    },
+    "extDesc": {
+        "message": "A silly skeleton that runs across your screen occasionally.",
+        "description": "The description of the extension"
+    },
+    "popupTitle": {
+        "message": "Skeletor Stats",
+        "description": "Title of the popup"
+    },
+    "lastSpawn": {
+        "message": "Last spawn:",
+        "description": "Label for last spawn time"
+    },
+    "currentPity": {
+        "message": "Probability of occurrence:",
+        "description": "Label for current pity chance"
+    },
+    "sessionSpawns": {
+        "message": "Session Spawns:",
+        "description": "Label for session spawn count"
+    },
+    "minAgo": {
+        "message": "min ago",
+        "description": "Minutes ago text"
+    },
+    "keepRattling": {
+        "message": "Keep the bones rattling",
+        "description": "Footer text"
+    },
+    "coffeeBtn": {
+        "message": "Coffee",
+        "description": "Buy Me a Coffee button text"
+    },
+    "kofiBtn": {
+        "message": "Ko-fi",
+        "description": "Ko-fi button text"
+    },
+    "githubBtn": {
+        "message": "GitHub / Feedback",
+        "description": "GitHub button text"
+    }
+}

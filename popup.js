@@ -7,7 +7,8 @@ function updateStats() {
         // Last spawn time
         const diffMs = Date.now() - lastSpawn;
         const minutes = Math.floor(diffMs / 60000);
-        document.getElementById('lastSpawn').textContent = `${minutes} min ago`;
+        const minAgoText = chrome.i18n.getMessage("minAgo");
+        document.getElementById('lastSpawn').textContent = `${minutes} ${minAgoText}`;
 
         // Pity/Chance
         const currentChance = 0.01 + (failCount * 0.001);
@@ -18,6 +19,19 @@ function updateStats() {
     });
 }
 
-document.addEventListener('DOMContentLoaded', updateStats);
+function initI18n() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+        const message = chrome.i18n.getMessage(element.getAttribute('data-i18n'));
+        if (message) {
+            element.textContent = message;
+        }
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    initI18n();
+    updateStats();
+});
+
 // Refresh every 30 seconds while open
 setInterval(updateStats, 30000);

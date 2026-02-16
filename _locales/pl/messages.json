@@ -1,0 +1,35 @@
+{
+    "extName": {
+        "message": "Szkieletorowy Bieg"
+    },
+    "extDesc": {
+        "message": "Wesoły szkielet, który od czasu do czasu przebiega przez ekran."
+    },
+    "popupTitle": {
+        "message": "Statystyki Szkieletora"
+    },
+    "lastSpawn": {
+        "message": "Ostatni spawn:"
+    },
+    "currentPity": {
+        "message": "Prawdopodobieństwo wystąpienia:"
+    },
+    "sessionSpawns": {
+        "message": "Spawny w sesji:"
+    },
+    "minAgo": {
+        "message": "min temu"
+    },
+    "keepRattling": {
+        "message": "Niech kości grzechoczą"
+    },
+    "coffeeBtn": {
+        "message": "Kawa"
+    },
+    "kofiBtn": {
+        "message": "Ko-fi"
+    },
+    "githubBtn": {
+        "message": "GitHub / Feedback"
+    }
+}

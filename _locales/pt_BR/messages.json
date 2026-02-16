@@ -1,0 +1,35 @@
+{
+    "extName": {
+        "message": "Corrida de Esqueleto"
+    },
+    "extDesc": {
+        "message": "Um esqueleto bobo que corre pela sua tela ocasionalmente."
+    },
+    "popupTitle": {
+        "message": "Estatísticas do Esqueleto"
+    },
+    "lastSpawn": {
+        "message": "Último spawn:"
+    },
+    "currentPity": {
+        "message": "Pity atual:"
+    },
+    "sessionSpawns": {
+        "message": "Spawns na sessão:"
+    },
+    "minAgo": {
+        "message": "min atrás"
+    },
+    "keepRattling": {
+        "message": "Mantenha os ossos chacoalhando"
+    },
+    "coffeeBtn": {
+        "message": "Café"
+    },
+    "kofiBtn": {
+        "message": "Ko-fi"
+    },
+    "githubBtn": {
+        "message": "GitHub / Feedback"
+    }
+}

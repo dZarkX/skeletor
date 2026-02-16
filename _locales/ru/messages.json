@@ -1,0 +1,35 @@
+{
+    "extName": {
+        "message": "Бегущий Скелет"
+    },
+    "extDesc": {
+        "message": "Глупый скелет, который время от времени пробегает по экрану."
+    },
+    "popupTitle": {
+        "message": "Статистика Скелета"
+    },
+    "lastSpawn": {
+        "message": "Последнее появление:"
+    },
+    "currentPity": {
+        "message": "Текущая удача:"
+    },
+    "sessionSpawns": {
+        "message": "Появлений за сессию:"
+    },
+    "minAgo": {
+        "message": "мин. назад"
+    },
+    "keepRattling": {
+        "message": "Пусть кости гремят"
+    },
+    "coffeeBtn": {
+        "message": "Кофе"
+    },
+    "kofiBtn": {
+        "message": "Ko-fi"
+    },
+    "githubBtn": {
+        "message": "GitHub / Feedback"
+    }
+}

@@ -61,7 +61,52 @@
         }
 
         .donate-btn:hover {
-            background-color: #444;
+            filter: brightness(1.1);
+        }
+
+        .donate-row {
+            display: flex;
+            gap: 8px;
+            width: 100%;
+        }
+
+        .donate-row .donate-btn {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px 2px;
+            font-size: 0.7rem;
+            white-space: nowrap;
+        }
+
+        .donate-btn.github {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .bmc {
+            background-color: #FFDD00;
+            color: #000000;
+        }
+
+        .kofi {
+            background-color: #13C3FF;
+            color: #ffffff;
+        }
+
+        .github {
+            background-color: #24292e;
+            color: #ffffff;
+        }
+
+        .donate-btn svg {
+            width: 16px;
+            height: 16px;
+            vertical-align: middle;
+            margin-right: 4px;
+            fill: currentColor;
         }
 
         .bone {
@@ -73,34 +118,47 @@
 </head>
 
 <body>
-    <h2>Skeletor Stats</h2>
+    <h2 data-i18n="popupTitle">Skeletor Stats</h2>
     <div class="bone">💀</div>
     <div class="stat-item">
-        <span>Last spawn:</span>
+        <span data-i18n="lastSpawn">Last spawn:</span>
         <span id="lastSpawn" class="value">Loading...</span>
     </div>
     <div class="stat-item">
-        <span>Current Pity:</span>
+        <span data-i18n="currentPity">Current Pity:</span>
         <span id="pity" class="value">0%</span>
     </div>
     <div class="stat-item">
-        <span>Session Spawns:</span>
+        <span data-i18n="sessionSpawns">Session Spawns:</span>
         <span id="sessionCount" class="value">0</span>
     </div>
 
     <div class="footer">
-        <div style="font-size: 0.7rem; color: #888; margin-bottom: 10px;">Keep the bones rattling</div>
+        <div data-i18n="keepRattling" style="font-size: 0.7rem; color: #888; margin-bottom: 10px;">Keep the bones
+            rattling</div>
         <div class="donate-links">
-            <div style="display: flex; gap: 8px;">
+            <div class="donate-row">
                 <a href="https://buymeacoffee.com/3mon" target="_blank" class="donate-btn bmc">
-                    <span>☕</span> Buy Me a Coffee
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M20 7h-1.2l-1-4.2C17.6 2.3 17.1 2 16.5 2H5c-.6 0-1.1.3-1.3.8l-1 4.2H2a1 1 0 1 0 0 2h1.2l2.3 10.5c.1.5.6.9 1.1.9h11c.5 0 1-.4 1.1-.9l2.3-10.5H22a1 1 0 1 0 0-2zm-5.4-3h1L16 5.8 15.6 4zm-2.8 0h1l.3 1.8h-1L11.8 4zm-2.8 0h1l.3 1.8h-1L9 4zm-2.8 0h1l.3 1.8h-1L6.2 4zM16 18.2H8l-1.9-8.5h9.8l-1.9 8.5z" />
+                    </svg>
+                    <span data-i18n="coffeeBtn">Coffee</span>
                 </a>
                 <a href="https://ko-fi.com/3mon_" target="_blank" class="donate-btn kofi">
-                    <span>❤️</span> Ko-fi
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M23.881 8.948c-.773-4.085-4.859-4.593-4.859-4.593H.724c-.304 0-.55.245-.55.55v14.33c0 1.19.971 2.161 2.161 2.161h13.15c1.19 0 2.161-.971 2.161-2.161V17.37s2.51.527 3.931-1.071c1.884-2.127 2.304-5.266 2.304-7.351zm-4.322 6.54c-1.287 1.132-3.088.75-3.088.75V6.155s1.954-.25 3.031.25c1.077.5 2.124 2.158 2.124 4.887 0 2.123-.74 4.093-2.067 4.194z" />
+                    </svg>
+                    <span data-i18n="kofiBtn">Ko-fi</span>
                 </a>
             </div>
             <a href="https://github.com/dZarkX/skeletor" target="_blank" class="donate-btn github">
-                <span>GitHub / Feedback</span>
+                <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8" />
+                </svg>
+                <span data-i18n="githubBtn">GitHub / Feedback</span>
             </a>
         </div>
     </div>

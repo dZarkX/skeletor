@@ -1,6 +1,6 @@
 // Constants
 const ALARM_NAME = 'skeletonChance';
-const BASE_CHANCE = 0.01; // 1%
+const BASE_CHANCE = 0.005; // 0.5%
 const PITY_INCREMENT = 0.001; // +0.1% per minute
 
 // Set up alarm to fire every minute
@@ -84,7 +84,6 @@ function updateBadge(lastSpawnTime, currentChance) {
 // Listen for the shortcut command
 chrome.commands.onCommand.addListener((command) => {
     if (command === 'trigger-skeleton') {
-        console.log('Shortcut triggered. Spawning skeleton...');
         triggerSkeleton();
         resetState();
     }
