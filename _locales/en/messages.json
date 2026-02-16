@@ -40,7 +40,7 @@
         "description": "Tooltip for session spawns"
     },
     "totalSpawnsTooltip": {
-        "message": "Total number of times the skeleton appeared since installation.",
+        "message": "The highest number of skeletons you have seen in a single session.",
         "description": "Tooltip for total spawns"
     },
     "minAgo": {

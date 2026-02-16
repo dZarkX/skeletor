@@ -30,7 +30,7 @@
         "message": "Liczba pojawień się szkieleta w tej sesji przeglądarki."
     },
     "totalSpawnsTooltip": {
-        "message": "Całkowita liczba pojawień się szkieleta od momentu instalacji."
+        "message": "Największa liczba szkieletów spotkanych w jednej sesji."
     },
     "minAgo": {
         "message": "min temu"

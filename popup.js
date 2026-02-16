@@ -1,9 +1,9 @@
 function updateStats() {
-    chrome.storage.local.get(['lastSpawn', 'failCount', 'sessionCount'], (result) => {
+    chrome.storage.local.get(['lastSpawn', 'failCount', 'sessionCount', 'bestRecord'], (result) => {
         const lastSpawn = result.lastSpawn || Date.now();
         const failCount = result.failCount || 0;
         const sessionCount = result.sessionCount || 0;
-        const totalSpawns = result.totalSpawns || 0;
+        const bestRecord = result.bestRecord || 0;
 
         // Last spawn time
         const diffMs = Date.now() - lastSpawn;
@@ -19,7 +19,7 @@ function updateStats() {
         document.getElementById('sessionCount').textContent = sessionCount;
 
         // Total Spawns (Record)
-        document.getElementById('totalSpawns').textContent = totalSpawns;
+        document.getElementById('totalSpawns').textContent = bestRecord;
     });
 }
 
@@ -46,3 +46,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Refresh every 30 seconds while open
 setInterval(updateStats, 30000);
+
+// Listen for storage changes to update UI immediately
+chrome.storage.onChanged.addListener((changes, namespace) => {
+    if (namespace === 'local') {
+        updateStats();
+    }
+});

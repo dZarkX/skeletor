@@ -2,8 +2,12 @@
 
 A (silly) extension that makes a skeleton run across your screen occasionally because why not?
 
+## Update 1.0.4
+- **High Score System**: "Skeletor Record" now tracks your **best single session** score. Can you beat your own record?
+- **Bug Fixes**: Fixed an issue where the record counter wasn't updating correctly in real-time.
+
 ## Update 1.0.3
-- **Skeletor Record**: Added a persistent "Total Spawns" counter that tracks your history since installation.
+- **Skeletor Record**: Added a persistent counter (now High Score).
 - **Session Reset**: "Session Spawns" now correctly resets when you restart your browser.
 - **Tooltips**: Added explanatory tooltips to all statistics in the popup.
 - **Minimized Window Fix**: The skeleton will no longer spawn (or play sound) if the browser window is minimized.

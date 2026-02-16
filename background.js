@@ -17,26 +17,22 @@ chrome.runtime.onStartup.addListener(() => {
 
 // Initialize storage if empty
 function initializeState() {
-    chrome.storage.local.get(['lastSpawn', 'failCount', 'sessionCount', 'totalSpawns'], (result) => {
+    chrome.storage.local.get(['lastSpawn', 'failCount', 'sessionCount', 'bestRecord'], (result) => {
         let updates = {};
 
-        // Migration: If totalSpawns is missing but we have sessionCount, 
-        // treat old sessionCount as the historical record.
-        if (result.totalSpawns === undefined) {
-            updates.totalSpawns = result.sessionCount || 0;
-            // Reset session count for this new "session" (since update/install)
-            updates.sessionCount = 0;
+        // Initialize bestRecord if missing
+        if (result.bestRecord === undefined) {
+            updates.bestRecord = result.sessionCount || 0;
         }
 
         if (!result.lastSpawn) {
             updates.lastSpawn = Date.now();
             updates.failCount = 0;
             if (updates.sessionCount === undefined) updates.sessionCount = 0;
-            if (updates.totalSpawns === undefined) updates.totalSpawns = 0;
 
             chrome.storage.local.set(updates, () => updateBadge(Date.now(), BASE_CHANCE));
         } else {
-            // Apply any migration updates
+            // Apply any initialization updates
             if (Object.keys(updates).length > 0) {
                 chrome.storage.local.set(updates);
             }
@@ -85,17 +81,24 @@ function checkAndTrigger() {
 
 // Reset state after spawn
 // Reset state after spawn
+// Reset state after spawn
 function resetState() {
-    chrome.storage.local.get(['sessionCount', 'totalSpawns'], (result) => {
-        const newSessionCount = (result.sessionCount || 0) + 1;
-        const newTotalSpawns = (result.totalSpawns || 0) + 1;
+    chrome.storage.local.get(['sessionCount', 'bestRecord'], (result) => {
+        const currentSession = (result.sessionCount || 0) + 1;
+        let bestRecord = result.bestRecord || 0;
+
+        // Update High Score if current session exceeds it
+        if (currentSession > bestRecord) {
+            bestRecord = currentSession;
+        }
+
         const now = Date.now();
 
         chrome.storage.local.set({
             lastSpawn: now,
             failCount: 0,
-            sessionCount: newSessionCount,
-            totalSpawns: newTotalSpawns
+            sessionCount: currentSession,
+            bestRecord: bestRecord
         });
         updateBadge(now, BASE_CHANCE);
     });

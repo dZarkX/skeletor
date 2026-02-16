@@ -30,7 +30,7 @@
         "message": "Anzahl der Erscheinungen des Skeletts in dieser Browsersitzung."
     },
     "totalSpawnsTooltip": {
-        "message": "Gesamtzahl der Erscheinungen des Skeletts seit der Installation."
+        "message": "Die höchste Anzahl an Skeletten, die in einer einzigen Sitzung gesehen wurden."
     },
     "minAgo": {
         "message": "Min. her"

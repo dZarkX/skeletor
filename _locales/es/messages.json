@@ -30,7 +30,7 @@
         "message": "Número de veces que apareció el esqueleto en esta sesión del navegador."
     },
     "totalSpawnsTooltip": {
-        "message": "Número total de veces que apareció el esqueleto desde la instalación."
+        "message": "El mayor número de esqueletos vistos en una sola sesión."
     },
     "minAgo": {
         "message": "min atrás"
