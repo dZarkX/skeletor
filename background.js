@@ -51,7 +51,13 @@ function initializeState() {
 // Listen for the alarm
 chrome.alarms.onAlarm.addListener((alarm) => {
     if (alarm.name === ALARM_NAME) {
-        checkAndTrigger();
+        chrome.windows.getLastFocused({ populate: false }, (window) => {
+            if (window && window.state !== 'minimized') {
+                checkAndTrigger();
+            } else {
+                console.log("Skipping spawn check: Window is minimized.");
+            }
+        });
     }
 });
 
