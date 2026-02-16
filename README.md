@@ -2,12 +2,26 @@
 
 A (silly) extension that makes a skeleton run across your screen occasionally because why not?
 
-## 🚀 Features
-- **0.5% chance** per minute to get spooked.
-- **Pity system**: The longer you wait, the higher the chance!
-- **Random sounds**: 7 different bone-rattling audio effects.
-- **Silly popup**: Track how many times you've been "skeleted" this session.
-- **Debug mode**: Use `Ctrl + Shift + K` to trigger the skeleton manually.
+## Update 1.0.3
+- **Skeletor Record**: Added a persistent "Total Spawns" counter that tracks your history since installation.
+- **Session Reset**: "Session Spawns" now correctly resets when you restart your browser.
+- **Tooltips**: Added explanatory tooltips to all statistics in the popup.
+- **Minimized Window Fix**: The skeleton will no longer spawn (or play sound) if the browser window is minimized.
+- **Language Support**: Added/Updated support for Polish, English, German, Russian, Spanish, and Portuguese.
+
+## Update 1.0.2
+- **Fixed spawn rate**: The probability now increases by **0.1%** every minute (was 0.5% + 0.1%).
+- **Fixed locales**: Corrected text encoding for Polish language.
+
+## Update 1.0.1
+- **Fixed popup.js**: It now properly saves and loads stats.
+- **Added "Session Spawns"**: Tracks how many times he appeared in current session.
+
+## Features
+- **Random Spawns**: He appears when you least expect it.
+- **Sound Effects**: Spooky (or silly) sounds accompany his arrival.
+- **Pity System**: The longer he doesn't show up, the more likely he is to appear!
+- **Stats**: Track your last spawn time, current probability, and total sightings.
 
 ## 💰 Support the rattling
 If this made you chuckle, consider supporting the bone fund:
