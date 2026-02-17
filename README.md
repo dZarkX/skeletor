@@ -26,6 +26,10 @@ If this made you chuckle, consider supporting the bone fund:
 
 ## Changelog
 
+### v1.1.1
+- **Critical Sound Fix**: Fixed `Receiving end does not exist` error by ensuring the offscreen document is active before playing sound.
+- **Restricted Sites Fix**: Added a safety check to prevent checking or spawning on restricted URLs (like Chrome Web Store or internal browser pages) which was causing errors.
+
 ### v1.0.5
 - **Fixed Sound Issue**: Audio now plays via an Offscreen Document, ensuring it works even when the browser is not focused or is behind other windows.
 - **Improved Visibility Check**: Added `requestAnimationFrame` detection to prevent spawning when the window is occluded/not rendering.
