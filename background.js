@@ -224,9 +224,12 @@ function triggerSkeleton(targetWindowId, onSuccess) {
             const randomSound = soundFiles[Math.floor(Math.random() * soundFiles.length)];
             const soundUrl = chrome.runtime.getURL(`sounds/${randomSound}`);
 
-            chrome.runtime.sendMessage({
-                action: 'play-sound',
-                url: soundUrl
+            // Ensure offscreen document exists before sending message
+            setupOffscreenDocument(OFFSCREEN_DOCUMENT_PATH).then(() => {
+                chrome.runtime.sendMessage({
+                    action: 'play-sound',
+                    url: soundUrl
+                });
             });
 
             // 2. Spawn Visuals in Content Script
