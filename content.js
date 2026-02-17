@@ -2,29 +2,51 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.action === 'spawnSkeleton') {
     const spawned = spawnSkeleton();
     sendResponse({ status: spawned ? 'Skeleton spawned' : 'Skeleton already active' });
+  } else if (request.action === 'checkVisibility') {
+    checkVisibility(sendResponse);
+    return true; // Keep channel open for async response
   }
 });
+
+function checkVisibility(sendResponse) {
+  if (document.hidden) {
+    sendResponse({ isVisible: false, reason: 'hidden' });
+    return;
+  }
+
+  // Use requestAnimationFrame to check if the browser is rendering
+  let rafFired = false;
+  const rafId = requestAnimationFrame(() => {
+    rafFired = true;
+  });
+
+  setTimeout(() => {
+    cancelAnimationFrame(rafId);
+    if (rafFired) {
+      sendResponse({ isVisible: true });
+    } else {
+      // If RAF didn't fire in 50ms, the page is likely occluded or backgrounded deeply
+      sendResponse({ isVisible: false, reason: 'throttled' });
+    }
+  }, 50);
+}
 
 function spawnSkeleton() {
   if (document.getElementById('skeleton-run-container')) {
     return false;
   }
 
+  // Prevent spawn if tab is hidden/backgrounded
+  if (document.hidden) {
+    console.log('Skeleton skipped: Document is hidden');
+    return false;
+  }
+
   const pngUrl = chrome.runtime.getURL('skeleton_spritesheet.png');
-  const soundFiles = [
-    'bad-to-the-bone-meme.mp3',
-    'fnaf2-ambience.mp3',
-    'jumpscare_sound.wav',
-    'minecraft-train-whistle-cave-sound.mp3',
-    'skeletondie.mp3',
-    'skull-trumpet_XNDN4Ww.mp3',
-    'strange-sound-effect.mp3'
-  ];
-  const randomSound = soundFiles[Math.floor(Math.random() * soundFiles.length)];
-  const soundUrl = chrome.runtime.getURL(`sounds/${randomSound}`);
+  // Audio is now handled by background/offscreen script
 
   const frameCount = 11;
-  const fps = 12;
+  const fps = 10;
   const duration = frameCount / fps;
 
   const container = document.createElement('div');
@@ -86,8 +108,7 @@ function spawnSkeleton() {
   container.appendChild(sprite);
   document.body.appendChild(container);
 
-  const audio = new Audio(soundUrl);
-  audio.play().catch(e => console.log('Audio error:', e));
+  // Audio played via offscreen document
 
   setTimeout(() => {
     container.remove();

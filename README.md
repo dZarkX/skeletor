@@ -32,6 +32,18 @@ If this made you chuckle, consider supporting the bone fund:
 - [Buy me a coffee](https://buymeacoffee.com/3mon)
 - [Ko-fi](https://ko-fi.com/3mon_)
 
+## Credits
+- **Skeleton Gif**: [Tenor](https://tenor.com/view/skeleton-running-skeleton-running-gif-25636306)
+
+## Changelog
+
+### v1.0.5
+- **Fixed Sound Issue**: Audio now plays via an Offscreen Document, ensuring it works even when the browser is not focused or is behind other windows.
+- **Improved Visibility Check**: Added `requestAnimationFrame` detection to prevent spawning when the window is occluded/not rendering.
+- **Multi-Monitor Support**: Extension now correctly identifies visible windows across all monitors.
+- **Balance Update**: Base spawn chance set to 0.25% per minute (approx 1 spawn every 4-6 hours active time), with linear pity system.
+
+
 ## ⚠️ Warning
 May cause sudden skeletons. Do not use if you are allergic to calcium.
 
