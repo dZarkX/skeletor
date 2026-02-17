@@ -47,5 +47,11 @@ If this made you chuckle, consider supporting the bone fund:
 ## ⚠️ Warning
 May cause sudden skeletons. Do not use if you are allergic to calcium.
 
+
+
+
+
+crtl+shift+k for debug run
+
 ---
 *Made with 🦴 by 3mon*
